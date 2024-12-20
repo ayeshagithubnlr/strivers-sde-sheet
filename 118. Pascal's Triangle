@@ -1,0 +1,23 @@
+class Solution {
+    public List<List<Integer>> generate(int n) {
+     List<List<Integer>> res=new ArrayList<>();
+     for(int i=1;i<=n;i++)
+     {
+        res.add(gen(i));
+     }   
+     return res;
+    }
+    public List<Integer> gen(int r)
+    {
+        List<Integer> l=new ArrayList<>();
+        int a=1;
+        l.add(1);
+        for(int c=1;c<r;c++)
+        {
+            a=a*(r-c);
+            a=a/c;
+            l.add(a);
+        }
+        return l;
+    }
+}
